@@ -32,7 +32,7 @@
 
 - catalog/?filial=id список объектов Product + стоимость
 - catalog/<product_id>/?filial=id данные объекта Product + стоимость
-- - catalog/<product_id>/price/ данные объекта FilialPrice
+- catalog/<product_id>/price/ данные объекта FilialPrice
 - catalog/<product_id>/price/?filial=id данные объекта FilialPrice фильтруемые по филиалу
 - catalog/<product_id>/characteristic/  все связанные с этим товаром характеристики
 - catalog/?filial=id&characteristic=id
@@ -43,9 +43,9 @@
 ______
 **Пометка**
 
-- Я уточнил какого вида должны отдаваться объекта и на языке моделей это {"id": Product.id, "name": Product.name "price":FilialPrice.price}.
-- Просто роут /catalog/ не определились точно мне в ответе, что должен возвращать поэтому я возвращаю по умалчанию queryset.
-- Я уточнил про @action методы, если ждут от меня все запросы через экшен. Здесь ответа не было поэтому я сделал два action метода так как посчитал что ?filial=<> и ?characteristic=<> это квери параметры в урле для филтрации ежели прямо другой путь.
+- Я уточнил какого вида должны отдаваться объекты и на языке моделей это {"id": Product.id, "name": Product.name "price":FilialPrice.price}.
+- Обычный роут /catalog/, не определились точно мне в ответе что должен возвращать и поэтому я возвращаю по умолчанию queryset.
+- Я уточнил про @action методы, если ждут от меня все запросы через экшен. Здесь ответа не было поэтому я сделал два action метода так как посчитал что ?filial=<> и ?characteristic=<> это квери параметры в урле для фильтрации ежели прямо другой путь.
 - Убрал из названия полей product_id, filial_id этот _id так как не комильфо. В ORM из-за этого product_id_id.
 - Вместо папки settings  у меня папка project/settings/, где разные файлы для настроек.
 ______
